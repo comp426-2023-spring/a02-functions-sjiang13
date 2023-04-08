@@ -18,11 +18,12 @@ if (args.h) {
 	process.exit(0);
 }
 
-
 const timezone = moment.tz.guess();
 if (args.z){
-	timeszone = args.z;
+        timezone = args.z;
 }
+
+
 
 let latitude, longitude;
 if (args.n && args.s){
@@ -52,6 +53,8 @@ else if (args.e){
 	console.log("Longitude out of range");
 	process.exit(0);
 }
+
+
 const url = "https://api.open-meteo.com/v1/forecast?latitude=" + latitude + &longitude=" + longitude + "&timezone=" + timezone + "&daily=precipitation_hours";
 const response = await fetch('url');
 
