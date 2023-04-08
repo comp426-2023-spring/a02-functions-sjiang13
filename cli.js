@@ -17,8 +17,7 @@ if (args.h) {
 			-j            Echo pretty JSON from open-meteo API and exit.`);
 	process.exit(0);
 }
-
-const timezone = moment.tz.guess();
+let timezone = moment.tz.guess();
 if (args.z){
         timezone = args.z;
 }
